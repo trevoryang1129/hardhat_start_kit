@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "bclient"
+		},
+		{
+			"path": "bserver"
+		}
+	],
+	"settings": {}
+}
