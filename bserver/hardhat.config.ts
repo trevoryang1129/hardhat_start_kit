@@ -1,13 +1,27 @@
 import * as dotenv from "dotenv";
 
-import { HardhatUserConfig, task } from "hardhat/config";
+import { HardhatUserConfig, task,extendEnvironment } from "hardhat/config";
 import "@nomiclabs/hardhat-etherscan";
 import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
+import "hardhat-ethernal"
 
 dotenv.config();
+
+extendEnvironment((hre) => {
+  hre.ethernalSync = true;
+  hre.ethernalWorkspace = 'bc_ws';
+  hre.ethernalTrace = true;
+
+  // You can automatically reset your workspace by setting the ethernalResetOnStart property 
+  // to the name of the workspace. Everytime the node starts, all accounts/blocks/transactions/contracts will be deleted.
+  hre.ethernalResetOnStart = 'bc_ws';
+  //hit error
+  // hre.ethernalUploadAst = true;
+});
+
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -19,6 +33,17 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   }
 });
 
+task("sync_artifact", "sync contract artifact", async (taskArgs, hre) => {
+  await hre.ethernal.push({
+    name: "Greeter",
+    address:"0x5FbDB2315678afecb367f032d93F642f64180aa3"
+  })
+});
+
+task("reset_workspace","reset workspace",async(taskArgs, hre)=> {
+  await  hre.ethernal.resetWorkspace("bc_ws")
+})
+
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
 
@@ -28,7 +53,7 @@ const config: HardhatUserConfig = {
   networks: {
     localhost_8888:
     {
-      url:"http://127.0.0.1:8888/"
+      url:"http://0.0.0.0:8888/"
     },
     ropsten: {
       url: process.env.ROPSTEN_URL || "",

@@ -1,6 +1,24 @@
 {
   "extends": "@quasar/app/tsconfig-preset",
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": 
+    {
+      "src/*": ["src/*"],
+      "app/*": ["*"],
+      "components/*": ["src/components/*"],
+      "layouts/*": ["src/layouts/*"],
+      "pages/*": ["src/pages/*"],
+      "assets/*": ["src/assets/*"],
+      "boot/*": ["src/boot/*"],
+      "store/*": ["src/store/*"],
+      "typechain/*": ["src/typechain/*"],
+      "artifacts/*": ["src/artifacts/*"],
+      "common/*":["src/common/*"]
+    },
+    "strictPropertyInitialization": false,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "experimentalDecorators": true
   }
 }

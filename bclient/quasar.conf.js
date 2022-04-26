@@ -7,7 +7,7 @@
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
 const { configure } = require('quasar/wrappers');
-
+const path=require("path")
 module.exports = configure(function (ctx) {
   return {
     // https://quasar.dev/quasar-cli/supporting-ts
@@ -21,6 +21,7 @@ module.exports = configure(function (ctx) {
     // https://quasar.dev/quasar-cli/boot-files
     boot: [
       'axios',
+      'common_load'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -62,7 +63,27 @@ module.exports = configure(function (ctx) {
 
       // Options below are automatically set depending on the env, set them if you want to override
       // extractCSS: false,
-
+      extendWebpack(cfg, { isServer, isClient }) {
+        // linting is slow in TS projects, we execute it only for production builds
+        if (1 == 2 && ctx.prod) {
+            cfg.module.rules.push({
+                enforce: 'pre',
+                test: /\.(js|vue)$/,
+                loader: 'eslint-loader',
+                exclude: /node_modules/
+            })
+        }
+        cfg.resolve.alias =
+        {
+            ...cfg.resolve.alias, // This adds the existing alias
+            // Add your own alias like this
+            typechain: path.resolve(__dirname, './src/typechain'),
+            store: path.resolve(__dirname, './src/store'),
+            artifacts: path.resolve(__dirname, './src/artifacts'),
+            common:path.resolve(__dirname,"./src/common")
+        }
+        console.log(cfg.resolve.alias)
+      },
       // https://quasar.dev/quasar-cli/handling-webpack
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
       chainWebpack (/* chain */) {
@@ -94,7 +115,9 @@ module.exports = configure(function (ctx) {
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Notify'
+      ]
     },
 
     // animations: 'all', // --- includes all animations

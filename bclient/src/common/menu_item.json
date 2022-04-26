@@ -1,0 +1,12 @@
+[
+    {
+      "title": "主页",
+      "icon": "school",
+      "link": "home"
+    },
+    {
+      "title": "Greeter",
+      "icon": "school",
+      "link": "greeter"
+    }
+]

@@ -13,15 +13,6 @@ import { Todo, Meta } from './models';
 import { ethers } from 'ethers'
 import {Greeter} from "src/typechain/Greeter"
 import GreeterAbi from 'src/artifacts/contracts/Greeter.sol/Greeter.json'
-declare global {
-  interface Window {
-    ethereum:{
-    isConnected():boolean,
-    request(args: { method: string;params?: unknown[] | object;}): Promise<unknown>,
-    on(event:string, handler: (para: any) => void):void,
-    }
-  }
-}
 export default defineComponent({
   name: 'CompositionComponent',
   setup(props) {
