@@ -1,10 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "bclient"
+			"path": "./bclient"
 		},
 		{
-			"path": "bserver"
+			"path": "./bserver"
 		}
 	],
 	"settings": {}

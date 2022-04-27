@@ -10,16 +10,17 @@ import "hardhat-ethernal"
 
 dotenv.config();
 
+//官网： https://app.tryethernal.com/
+//ethernal 不稳定，经常连接中断，关闭
 extendEnvironment((hre) => {
-  hre.ethernalSync = true;
+  hre.ethernalSync = false;
   hre.ethernalWorkspace = 'bc_ws';
-  hre.ethernalTrace = true;
+  hre.ethernalTrace = false;
 
   // You can automatically reset your workspace by setting the ethernalResetOnStart property 
   // to the name of the workspace. Everytime the node starts, all accounts/blocks/transactions/contracts will be deleted.
   hre.ethernalResetOnStart = 'bc_ws';
-  //hit error
-  // hre.ethernalUploadAst = true;
+  hre.ethernalUploadAst = true;
 });
 
 
