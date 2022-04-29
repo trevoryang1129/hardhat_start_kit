@@ -14,6 +14,11 @@ const routes: RouteRecordRaw[] = [
           path: '',
           name: 'greeter',
           component: () => import('pages/Greeter.vue') 
+        },
+        {
+          path:"dynamic_contract_create",
+          name:"dynamic_contract_create",
+          component:()=>import("pages/DynamicContractCreate.vue")
         }
       ],
   },

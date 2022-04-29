@@ -17,6 +17,18 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Bus__factory>;
     getContractFactory(
+      name: "BusFactory",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.BusFactory__factory>;
+    getContractFactory(
+      name: "CodePool",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.CodePool__factory>;
+    getContractFactory(
+      name: "ContractProxy",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ContractProxy__factory>;
+    getContractFactory(
       name: "Greeter",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Greeter__factory>;
@@ -26,6 +38,21 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.Bus>;
+    getContractAt(
+      name: "BusFactory",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.BusFactory>;
+    getContractAt(
+      name: "CodePool",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.CodePool>;
+    getContractAt(
+      name: "ContractProxy",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ContractProxy>;
     getContractAt(
       name: "Greeter",
       address: string,

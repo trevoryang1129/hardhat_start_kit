@@ -8,5 +8,10 @@
       "title": "Greeter",
       "icon": "school",
       "link": "greeter"
+    },
+    {
+      "title": "合约动态创建",
+      "icon": "school",
+      "link": "dynamic_contract_create"
     }
 ]

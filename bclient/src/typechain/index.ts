@@ -2,7 +2,13 @@
 /* tslint:disable */
 /* eslint-disable */
 export type { Bus } from "./Bus";
+export type { BusFactory } from "./BusFactory";
+export type { CodePool } from "./CodePool";
+export type { ContractProxy } from "./ContractProxy";
 export type { Greeter } from "./Greeter";
 
 export { Bus__factory } from "./factories/Bus__factory";
+export { BusFactory__factory } from "./factories/BusFactory__factory";
+export { CodePool__factory } from "./factories/CodePool__factory";
+export { ContractProxy__factory } from "./factories/ContractProxy__factory";
 export { Greeter__factory } from "./factories/Greeter__factory";
