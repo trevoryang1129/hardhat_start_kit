@@ -13,5 +13,10 @@
       "title": "合约动态创建",
       "icon": "school",
       "link": "dynamic_contract_create"
+    },
+    {
+      "title": "投票系统",
+      "icon": "school",
+      "link": "vote_system"
     }
 ]

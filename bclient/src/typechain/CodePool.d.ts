@@ -20,14 +20,23 @@ import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface CodePoolInterface extends ethers.utils.Interface {
   functions: {
+    "getBallotCode(bytes32[],address,string)": FunctionFragment;
     "getBusCode(address,string)": FunctionFragment;
   };
 
+  encodeFunctionData(
+    functionFragment: "getBallotCode",
+    values: [BytesLike[], string, string]
+  ): string;
   encodeFunctionData(
     functionFragment: "getBusCode",
     values: [string, string]
   ): string;
 
+  decodeFunctionResult(
+    functionFragment: "getBallotCode",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "getBusCode", data: BytesLike): Result;
 
   events: {};
@@ -77,12 +86,26 @@ export class CodePool extends BaseContract {
   interface: CodePoolInterface;
 
   functions: {
+    getBallotCode(
+      proposalNames: BytesLike[],
+      _chairperson: string,
+      _title: string,
+      overrides?: CallOverrides
+    ): Promise<[string]>;
+
     getBusCode(
       _owner: string,
       _model: string,
       overrides?: CallOverrides
     ): Promise<[string] & { code: string }>;
   };
+
+  getBallotCode(
+    proposalNames: BytesLike[],
+    _chairperson: string,
+    _title: string,
+    overrides?: CallOverrides
+  ): Promise<string>;
 
   getBusCode(
     _owner: string,
@@ -91,6 +114,13 @@ export class CodePool extends BaseContract {
   ): Promise<string>;
 
   callStatic: {
+    getBallotCode(
+      proposalNames: BytesLike[],
+      _chairperson: string,
+      _title: string,
+      overrides?: CallOverrides
+    ): Promise<string>;
+
     getBusCode(
       _owner: string,
       _model: string,
@@ -101,6 +131,13 @@ export class CodePool extends BaseContract {
   filters: {};
 
   estimateGas: {
+    getBallotCode(
+      proposalNames: BytesLike[],
+      _chairperson: string,
+      _title: string,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     getBusCode(
       _owner: string,
       _model: string,
@@ -109,6 +146,13 @@ export class CodePool extends BaseContract {
   };
 
   populateTransaction: {
+    getBallotCode(
+      proposalNames: BytesLike[],
+      _chairperson: string,
+      _title: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
     getBusCode(
       _owner: string,
       _model: string,

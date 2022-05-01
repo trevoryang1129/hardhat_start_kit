@@ -19,7 +19,13 @@ const routes: RouteRecordRaw[] = [
           path:"dynamic_contract_create",
           name:"dynamic_contract_create",
           component:()=>import("pages/DynamicContractCreate.vue")
-        }
+        },
+        {
+          path:"vote_system",
+          name:"vote_system",
+          component:()=>import("pages/VoteSystem.vue")
+        },
+        
       ],
   },
 
