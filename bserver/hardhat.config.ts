@@ -6,13 +6,13 @@ import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
-import "hardhat-ethernal"
+// import "hardhat-ethernal"
 
 dotenv.config();
 
 //官网： https://app.tryethernal.com/
 //ethernal 不稳定，经常连接中断，关闭
-extendEnvironment((hre) => {
+/* extendEnvironment((hre) => {
   hre.ethernalSync = false;
   hre.ethernalWorkspace = 'bc_ws';
   hre.ethernalTrace = false;
@@ -21,7 +21,7 @@ extendEnvironment((hre) => {
   // to the name of the workspace. Everytime the node starts, all accounts/blocks/transactions/contracts will be deleted.
   hre.ethernalResetOnStart = 'bc_ws';
   hre.ethernalUploadAst = true;
-});
+}); */
 
 
 // This is a sample Hardhat task. To learn how to create your own go to
@@ -34,7 +34,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   }
 });
 
-task("sync_artifact", "sync contract artifact", async (taskArgs, hre) => {
+/* task("sync_artifact", "sync contract artifact", async (taskArgs, hre) => {
   await hre.ethernal.push({
     name: "Greeter",
     address:"0x5FbDB2315678afecb367f032d93F642f64180aa3"
@@ -43,7 +43,7 @@ task("sync_artifact", "sync contract artifact", async (taskArgs, hre) => {
 
 task("reset_workspace","reset workspace",async(taskArgs, hre)=> {
   await  hre.ethernal.resetWorkspace("bc_ws")
-})
+}) */
 
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
