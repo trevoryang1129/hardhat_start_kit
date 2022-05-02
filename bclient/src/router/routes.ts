@@ -14,6 +14,11 @@ const routes: RouteRecordRaw[] = [
           path: '',
           name: 'greeter',
           component: () => import('pages/Greeter.vue') 
+        },
+        {
+          path: 'erc_token',
+          name: 'erc_token',
+          component: () => import('pages/Ljm.vue') 
         }
       ],
   },

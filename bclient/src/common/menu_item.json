@@ -8,5 +8,10 @@
       "title": "Greeter",
       "icon": "school",
       "link": "greeter"
+    },
+    {
+      "title": "ERC20",
+      "icon": "school",
+      "link": "erc_token"
     }
 ]
