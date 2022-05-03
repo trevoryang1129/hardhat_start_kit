@@ -13,5 +13,10 @@
       "title": "ERC20",
       "icon": "school",
       "link": "erc_token"
+    },
+    {
+      "title": "ICO",
+      "icon": "school",
+      "link": "ico"
     }
 ]

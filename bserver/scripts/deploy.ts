@@ -7,6 +7,7 @@ import { ethers } from "hardhat";
 import href from "hardhat"
 import {Signer,BigNumber} from "ethers"
 import fs from "fs"
+import {SimpleCrowdsale} from "typechain/SimpleCrowdsale"
 let all_contract_address:{[i:string]:string}={}
 let all_deploy_contract:{[k:string]:any[]}={
   "Greeter":["Hello, world!"],
@@ -34,10 +35,18 @@ async function deploy_all_contract()
     console.log("contract:",k,'deploy to :',contract_inst.address);
   }
 }
+async function deploy_crowdsale() 
+{
+  const crowsale_fact = await ethers.getContractFactory("SimpleCrowdsale");
+  const crowsale_inst = await crowsale_fact.deploy(50,10,all_contract_address["LJM"]);
+  all_contract_address["SimpleCrowdsale"]= crowsale_inst.address
+  console.log("crowsale_inst deployed to:", crowsale_inst.address);
+}
 async function main() 
 {
 
   await deploy_all_contract()
+  await deploy_crowdsale()
   fs.writeFile("../bclient/src/common/contract_address.json",JSON.stringify(all_contract_address),(error)=>{
     if(error)
     {

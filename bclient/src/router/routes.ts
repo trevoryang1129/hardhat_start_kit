@@ -19,7 +19,13 @@ const routes: RouteRecordRaw[] = [
           path: 'erc_token',
           name: 'erc_token',
           component: () => import('pages/Ljm.vue') 
+        },
+        {
+          path: 'ico',
+          name: 'ico',
+          component: () => import('pages/Ico.vue') 
         }
+        
       ],
   },
 

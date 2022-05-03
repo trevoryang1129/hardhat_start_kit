@@ -4,7 +4,11 @@
 export type { Bus } from "./Bus";
 export type { Greeter } from "./Greeter";
 export type { LJM } from "./LJM";
+export type { Itoken } from "./Itoken";
+export type { SimpleCrowdsale } from "./SimpleCrowdsale";
 
 export { Bus__factory } from "./factories/Bus__factory";
 export { Greeter__factory } from "./factories/Greeter__factory";
 export { LJM__factory } from "./factories/LJM__factory";
+export { Itoken__factory } from "./factories/Itoken__factory";
+export { SimpleCrowdsale__factory } from "./factories/SimpleCrowdsale__factory";

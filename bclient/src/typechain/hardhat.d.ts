@@ -24,6 +24,14 @@ declare module "hardhat/types/runtime" {
       name: "LJM",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.LJM__factory>;
+    getContractFactory(
+      name: "Itoken",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.Itoken__factory>;
+    getContractFactory(
+      name: "SimpleCrowdsale",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.SimpleCrowdsale__factory>;
 
     getContractAt(
       name: "Bus",
@@ -40,6 +48,16 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.LJM>;
+    getContractAt(
+      name: "Itoken",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.Itoken>;
+    getContractAt(
+      name: "SimpleCrowdsale",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.SimpleCrowdsale>;
 
     // default types
     getContractFactory(
