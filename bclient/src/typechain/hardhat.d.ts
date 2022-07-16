@@ -20,6 +20,22 @@ declare module "hardhat/types/runtime" {
       name: "Greeter",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Greeter__factory>;
+    getContractFactory(
+      name: "SignedConsumer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.SignedConsumer__factory>;
+    getContractFactory(
+      name: "SignedConsumerTyped",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.SignedConsumerTyped__factory>;
+    getContractFactory(
+      name: "UnsignedConsumer",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.UnsignedConsumer__factory>;
+    getContractFactory(
+      name: "UnsignedConsumerTyped",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.UnsignedConsumerTyped__factory>;
 
     getContractAt(
       name: "Bus",
@@ -31,6 +47,26 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.Greeter>;
+    getContractAt(
+      name: "SignedConsumer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.SignedConsumer>;
+    getContractAt(
+      name: "SignedConsumerTyped",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.SignedConsumerTyped>;
+    getContractAt(
+      name: "UnsignedConsumer",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.UnsignedConsumer>;
+    getContractAt(
+      name: "UnsignedConsumerTyped",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.UnsignedConsumerTyped>;
 
     // default types
     getContractFactory(

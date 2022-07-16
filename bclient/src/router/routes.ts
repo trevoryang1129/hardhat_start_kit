@@ -14,6 +14,11 @@ const routes: RouteRecordRaw[] = [
           path: '',
           name: 'greeter',
           component: () => import('pages/Greeter.vue') 
+        },
+        {
+          path: 'prb_fixed_point',
+          name: 'prb_fixed_point',
+          component: () => import('pages/PrbFixedPoint.vue') 
         }
       ],
   },

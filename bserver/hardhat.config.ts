@@ -49,7 +49,7 @@ task("reset_workspace","reset workspace",async(taskArgs, hre)=> {
 // Go to https://hardhat.org/config/ to learn more
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.0",
+  solidity: "0.8.4",
   defaultNetwork:"localhost_8888",  //加入hardhat 自带的ETH 测试网络
   networks: {
     localhost_8888:

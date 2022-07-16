@@ -8,5 +8,10 @@
       "title": "Greeter",
       "icon": "school",
       "link": "greeter"
+    },
+    {
+      "title": "PRB",
+      "icon": "school",
+      "link": "prb_fixed_point"
     }
 ]

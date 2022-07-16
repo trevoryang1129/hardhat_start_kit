@@ -9,7 +9,11 @@ import {Signer,BigNumber} from "ethers"
 import fs from "fs"
 let all_contract_address:{[i:string]:string}={}
 let all_deploy_contract:{[k:string]:any[]}={
-  "Greeter":["Hello, world!"]
+  "Greeter":["Hello, world!"],
+  "SignedConsumer":[],
+  "SignedConsumerTyped":[],
+  "UnsignedConsumer":[],
+  "UnsignedConsumerTyped":[],
 }
 let all_deployed_contract_inst:{[k:string]:any}={}
 //这就不需要每次发布都重新写一个新的方法

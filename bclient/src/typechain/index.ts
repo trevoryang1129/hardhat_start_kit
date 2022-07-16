@@ -3,6 +3,14 @@
 /* eslint-disable */
 export type { Bus } from "./Bus";
 export type { Greeter } from "./Greeter";
+export type { SignedConsumer } from "./SignedConsumer";
+export type { SignedConsumerTyped } from "./SignedConsumerTyped";
+export type { UnsignedConsumer } from "./UnsignedConsumer";
+export type { UnsignedConsumerTyped } from "./UnsignedConsumerTyped";
 
 export { Bus__factory } from "./factories/Bus__factory";
 export { Greeter__factory } from "./factories/Greeter__factory";
+export { SignedConsumer__factory } from "./factories/SignedConsumer__factory";
+export { SignedConsumerTyped__factory } from "./factories/SignedConsumerTyped__factory";
+export { UnsignedConsumer__factory } from "./factories/UnsignedConsumer__factory";
+export { UnsignedConsumerTyped__factory } from "./factories/UnsignedConsumerTyped__factory";
